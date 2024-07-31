@@ -6,24 +6,6 @@ from sklearn.ensemble import RandomForestClassifier
 st.title('🤖 Machine Learning App - Random Forrest Classifier')
 
 st.info('This is app builds a machine learning model!')
-
-with st.expander('Data'):
-  st.write('**Raw data**')
-  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
-  df
-
-  st.write('**X**')
-  X_raw = df.drop('species', axis=1)
-  X_raw
-
-  st.write('**y**')
-  y_raw = df.species
-  y_raw
-
-with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
-  st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
-# Input features
 with st.sidebar:
   st.header('Input features')
   island = st.selectbox('Island', ('Biscoe', 'Dream', 'Torgersen'))
@@ -42,6 +24,25 @@ with st.sidebar:
           'sex': gender}
   input_df = pd.DataFrame(data, index=[0])
   input_penguins = pd.concat([input_df, X_raw], axis=0)
+  
+with st.expander('Data'):
+  st.write('**Raw data**')
+  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+  df
+
+  st.write('**X**')
+  X_raw = df.drop('species', axis=1)
+  X_raw
+
+  st.write('**y**')
+  y_raw = df.species
+  y_raw
+
+with st.expander('Data visualization'):
+  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
+  st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
+# Input features
+
 
 with st.expander('Input features'):
   st.write('**Input penguin**')
