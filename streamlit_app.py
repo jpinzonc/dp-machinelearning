@@ -23,7 +23,7 @@ with st.sidebar:
           'body_mass_g': body_mass_g,
           'sex': gender}
   input_df = pd.DataFrame(data, index=[0])
-  input_penguins = pd.concat([input_df, X_raw], axis=0)
+  
   
 with st.expander('Data'):
   st.write('**Raw data**')
@@ -37,7 +37,7 @@ with st.expander('Data'):
   st.write('**y**')
   y_raw = df.species
   y_raw
-
+input_penguins = pd.concat([input_df, X_raw], axis=0)
 with st.expander('Data visualization'):
   st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
   st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
