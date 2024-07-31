@@ -37,6 +37,10 @@ with st.expander('Data'):
   st.write('**y**')
   y_raw = df.species
   y_raw
+
+  st.write('**INPUT**')
+  input_df
+
 input_penguins = pd.concat([input_df, X_raw], axis=0)
 with st.expander('Data visualization'):
   input_df.loc[:,'species'] = 'Input'
