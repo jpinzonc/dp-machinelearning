@@ -43,7 +43,7 @@ with st.expander('Data visualization'):
   # df1 = df[['species', 'bill_length_mm', 'body_mass_g']]
   # df2 = input_df[['species', 'bill_length_mm', 'body_mass_g']]
   # df3 = pd.concat([df1, df2], axis = 1)
-  st.dataframe(df3)
+  # st.dataframe(df3)
   dff = pd.concat([df[['species', 'bill_length_mm', 'body_mass_g']],
                    input_df[['species', 'bill_length_mm', 'body_mass_g']]
                   ], acis = 0)
