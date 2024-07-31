@@ -47,9 +47,9 @@ with st.expander('Data visualization'):
   dff = pd.concat([df[['species', 'bill_length_mm', 'body_mass_g']],
                    input_df[['species', 'bill_length_mm', 'body_mass_g']]
                   ], axis = 0)
-  st.scatter_chart(data=dff, x='bill_length_mm', y='body_mass_g', color='species')
-  st.dataframe(df.head(2))
-  st.dataframe(input_df.head(2))# st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
+  st.scatter_chart(data=dff, x='bill_length_mm', y='body_mass_g', ["#FF1111", "#FF2222", "#FF0000", "#0000FF"]) #color='species')
+  # st.dataframe(df.head(2))
+  # st.dataframe(input_df.head(2))# st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
 # Input features
 
 
