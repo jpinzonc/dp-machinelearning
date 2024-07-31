@@ -46,7 +46,7 @@ with st.expander('Data visualization'):
   # st.dataframe(df3)
   dff = pd.concat([df[['species', 'bill_length_mm', 'body_mass_g']],
                    input_df[['species', 'bill_length_mm', 'body_mass_g']]
-                  ], acis = 0)
+                  ], axis = 0)
   st.scatter_chart(data=dff, x='bill_length_mm', y='body_mass_g', color='species')
   st.dataframe(df.head(2))
   st.dataframe(input_df.head(2))# st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
