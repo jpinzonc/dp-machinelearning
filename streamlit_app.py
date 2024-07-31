@@ -40,7 +40,7 @@ with st.expander('Data'):
 input_penguins = pd.concat([input_df, X_raw], axis=0)
 with st.expander('Data visualization'):
   input_df.loc[:,'species'] = 'input'
-  st.dataframe(input_df.head(2))
+  st.dataframe(df[['species', 'bill_length_mm', 'body_mass_g']].head(2))
   dff = pd.concat([df[['species', 'bill_length_mm', 'body_mass_g']],
                    input_df[['species', 'bill_length_mm', 'body_mass_g']]
                   ], acis = 1)
