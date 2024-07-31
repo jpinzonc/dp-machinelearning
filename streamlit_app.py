@@ -39,7 +39,9 @@ with st.expander('Data'):
   y_raw
 input_penguins = pd.concat([input_df, X_raw], axis=0)
 with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
+  input_df.loc[:,'species'] = 'input'
+  dff = pd.concat([df[['species', 'bill_length_mm', 'body_mass_g']], input_df[['species', 'bill_length_mm', 'body_mass_g']]], 1)
+  st.scatter_chart(data=dff, x='bill_length_mm', y='body_mass_g', color='species')
   st.dataframe(df.head(2))
   st.dataframe(input_df.head(2))# st.scatter_chart(data=input_df, x='bill_length_mm', y='body_mass_g', color='species')
 # Input features
